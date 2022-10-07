@@ -23,8 +23,6 @@ async function booksList(req, res) {
 
 async function submitPickupSchedule(req, res) {
   const params = req.body
-  console.log(req);
-  console.log(params)
   const submitPickupSchedule = await libraryService.submitPickupSchedule(params)
 
   return res.send(submitPickupSchedule)

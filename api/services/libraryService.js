@@ -3,7 +3,6 @@ const moment = require('moment')
 
 const newBookArr = []
 async function getBookListByAttribute(params) {
-  console.log(params)
   let query = {}
   if(params.details) query['details'] = params.details
   if(params.offset) query['offset'] = params.offset
@@ -55,9 +54,7 @@ async function submitPickupSchedule(params) {
   
     // check if already registered pickup schedule
     newBookArr.find((book) => {
-      console.log(book)
       if(book.editionNumber == bookData.editionNumber) {
-        console.log(true)
         result = {
           success: false,
           status: 500,
