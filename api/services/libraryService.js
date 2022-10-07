@@ -9,7 +9,14 @@ async function getBookListByAttribute(params) {
   if(params.limit) query['limit'] = params.limit
   
   const url = `https://openlibrary.org/subjects/${params.subject}.json`
-  const books = await axios.get(url, {params: query})
+  const books = await axios.get(url, {params: query}).catch((err) => {
+    throw {
+      success: false,
+      status: 500,
+      message: `Get data books by subject/genre failed. ${err}`,
+      data: []
+    }
+  })
   
   const data = []
   for(const book of books.data.works) {
@@ -31,7 +38,14 @@ async function getBookListByAttribute(params) {
     data.push(bookData)
   }
 
-  return data;
+  const result = {
+    success: true,
+    status: 200,
+    message: 'Get data books by subject/genre success.',
+    data: data
+  }
+
+  return result;
 }
 
 async function submitPickupSchedule(params) {

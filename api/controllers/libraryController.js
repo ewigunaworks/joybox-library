@@ -3,20 +3,7 @@ var libraryService = require('../services/libraryService');
 
 async function booksList(req, res) {
   const query = req.query
-  const bookLists = await libraryService.getBookListByAttribute(query)
-
-  let result = {}
-  if(bookLists.length > 0) {
-    result['success'] = true
-    result['status'] = 200
-    result['message'] = 'Get data books by subject/genre success.'
-    result['data'] = bookLists
-  } else {
-    result['success'] = failed
-    result['status'] = 404
-    result['message'] = 'Get data books by subject/genre failed.'
-    result['data'] = []
-  }
+  const result = await libraryService.getBookListByAttribute(query)
   
   return res.json(result)
 }
