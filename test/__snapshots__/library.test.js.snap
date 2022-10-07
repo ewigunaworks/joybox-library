@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Library test submit pickup schedule another book should return an object 1`] = `
+{
+  "data": [
+    {
+      "authors": [
+        {
+          "name": "Mark Twain",
+        },
+      ],
+      "editionNumber": 8157718,
+      "genre": "History",
+      "pickupSchedule": "2022-10-12 10:00:00",
+      "title": "Adventures of Huckleberry Finn",
+    },
+    {
+      "authors": [
+        {
+          "name": "Louisa May Alcott",
+        },
+      ],
+      "editionNumber": 6795866,
+      "genre": "History",
+      "pickupSchedule": "2022-10-12 11:00:00",
+      "title": "Little Women",
+    },
+  ],
+  "message": "Submit pickup schedule success.",
+  "status": 200,
+  "success": true,
+}
+`;
+
+exports[`Library test submit pickup schedule should return an object 1`] = `
+{
+  "data": [
+    {
+      "authors": [
+        {
+          "name": "Mark Twain",
+        },
+      ],
+      "editionNumber": 8157718,
+      "genre": "History",
+      "pickupSchedule": "2022-10-12 10:00:00",
+      "title": "Adventures of Huckleberry Finn",
+    },
+  ],
+  "message": "Submit pickup schedule success.",
+  "status": 200,
+  "success": true,
+}
+`;
