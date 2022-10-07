@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "824d6baa-c9b1-4a61-9789-51ebca308b23",
+		"name": "joybox-library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3108306"
+	},
+	"item": [
+		{
+			"name": "REST GET - /library",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/library?subject=history&details=true&limit=20&offset=0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"library"
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "history"
+						},
+						{
+							"key": "details",
+							"value": "true"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST POST - /library/submit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Little Women\",\n    \"authors\": [\n        {\n            \"name\": \"Louisa May Alcott\"\n        }\n    ],\n    \"genre\": \"History\",\n    \"editionNumber\": 6795866,\n    \"pickupSchedule\": \"2022-10-12 11:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/library/submit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"library",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
